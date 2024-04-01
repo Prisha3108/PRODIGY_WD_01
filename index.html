@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>KAFI COFFEE | Coffee Website</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+<nav>
+    <input type="checkbox" id="check">
+    <label for="check" class="checkbtn">
+        <i class="fas fa-bars"></i>
+    </label>
+    <label class="logo">KAFI COFFEE</label>
+    <ul>
+        <li><a class="active" href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#feedback">Feedback</a></li>
+    </ul>
+</nav>
+<section id="home" class="welcome-section">
+    <div class="welcome-content">
+        <h1>Welcome to KAFI COFFEE</h1>
+        <p class="experience">Experience the finest coffee blends from around the world.</p>
+    </div>
+</section>
+<section id="about" class="content-section">
+    <h2>About Us</h2>
+    <p>At KAFI COFFEE, we are passionate about delivering the highest quality coffee experience to our customers. Our journey began with a love for coffee and a vision to create a space where people can savor the finest coffee blends in a warm and inviting atmosphere.</p>
+    <p>Our team of expert baristas carefully source the finest coffee beans from sustainable farms across the globe. We roast our beans in-house to ensure freshness and flavor in every cup.</p>
+</section>
+<section id="menu" class="content-section">
+    <h2>Our Menu</h2>
+    <div class="menu-item">
+        <img src="espresso.jpeg" alt="Espresso">
+        <div class="menu-details">
+            <h3>Espresso</h3>
+            <p>A strong and rich Italian coffee served in a small cup.</p>
+            <p>Price: Rs 120</p>
+        </div>
+    </div>
+    <div class="menu-item">
+        <img src="irishcoffee.jpeg" alt="Irish Coffee">
+        <div class="menu-details">
+            <h3>Irish Coffee</h3>
+            <p>A delightful blend of coffee, Irish whiskey, sugar, and cream.</p>
+            <p>Price: Rs 250</p>
+        </div>
+    </div>
+    <div class="menu-item">
+        <img src="cappuccino.jpeg" alt="Cappuccino">
+        <div class="menu-details">
+            <h3>Cappuccino</h3>
+            <p>A classic Italian coffee topped with frothed milk and cocoa powder.</p>
+            <p>Price: Rs 240</p>
+        </div>
+    </div>
+</section>
+<section id="contact" class="content-section">
+    <h2>Contact Us</h2>
+    <p>Get in touch with us to inquire about our products, services, or to provide feedback. We'd love to hear from you!</p>
+    <p>Email: info@kaficoffee.com</p>
+    <p>Phone: 123-456-7890</p>
+</section>
+<section id="feedback" class="content-section">
+    <h2>Feedback</h2>
+    <p>We value your feedback! Share your thoughts and experiences with us to help us improve our products and services.</p>
+    <form>
+        <textarea placeholder="Enter your feedback"></textarea>
+        <button type="submit">Submit</button>
+    </form>
+</section>
+
+<script>
+    const checkBtn = document.querySelector('.checkbtn');
+    const navUl = document.querySelector('nav ul');
+
+    checkBtn.addEventListener('click', () => {
+        navUl.classList.toggle('show');
+    });
+
+    // Smooth scrolling
+    document.querySelectorAll('nav ul li a').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            const targetId = this.getAttribute('href').substring(1);
+            const targetSection = document.getElementById(targetId);
+
+            window.scrollTo({
+                top: targetSection.offsetTop,
+                behavior: 'smooth'
+            });
+        });
+    });
+</script>
+</body>
+</html>
